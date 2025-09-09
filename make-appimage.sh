@@ -21,7 +21,7 @@ cp msupcm++/msupcm AppDir/usr/bin/
 cat > AppDir/usr/share/applications/$APP.desktop <<EOF
 [Desktop Entry]
 Type=Application
-Name=MSUPCM
+Name=MSUPCMPLUSPLUS
 Exec=msupcm
 Icon=msupcm
 Categories=AudioVideo;Utility;
