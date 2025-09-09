@@ -50,3 +50,29 @@ make
 ```
 
 from the top-level repo directory.
+
+### AppImage
+
+It is also possible to build a portable **AppImage** of `msupcm++`.  
+This bundles the binary together with its dependencies into a single executable file  
+that can be run on most modern Linux distributions without installing libraries manually.
+
+From the top-level repo directory, run:
+
+```
+chmod +x make-appimage.sh  
+./make-appimage.sh
+```
+
+After the build finishes, an AppImage will be created in the same directory,  
+for example:
+
+```
+MSUPCMPLUSPLUS-x86_64.AppImage
+```
+
+You can run it directly:
+
+```
+./MSUPCMPLUSPLUS-x86_64.AppImage tracks.json
+```
