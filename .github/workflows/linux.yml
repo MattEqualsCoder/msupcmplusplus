@@ -1,0 +1,28 @@
+name: Linux AppImage
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout Repo with Submodules
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+      - name: Install Dependencies
+        run: sudo apt install -y build-essential autoconf libtool libao-dev libasound-dev libmad0-dev libmp3lame-dev libopusfile-dev libpulse-dev libsndfile1-dev libsndio-dev
+      - name: Create AppImage
+        run: ./make-appimage.sh
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          path: "MSUPCMPLUSPLUS*"
